@@ -1,10 +1,10 @@
 import React from 'react';
-import { Image, Text, View, ScrollView } from 'react-native';
+import { Image, ScrollView, View } from 'react-native';
 
-const AddImage = () => {
+const ImageScreen = () => {
   return (
-    <ScrollView>
-      <View style={{ alignItems: 'center' }}>
+    <View style={{ flexDirection: 'row' }}>
+      <ScrollView horizontal={true}>
         <View style={{ margin: 8, padding: 8 }}>
           <Image
             style={{
@@ -70,9 +70,9 @@ const AddImage = () => {
             source={{ uri: 'https://i.ibb.co/GQBLC7r/bulbasaur.png' }}
           />
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 
-export default AddImage;
+export default ImageScreen;
