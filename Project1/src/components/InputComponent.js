@@ -19,4 +19,4 @@ export const InputComponent = (props) => {
             />
         </View>
     )
-}
+};

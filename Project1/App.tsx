@@ -4,11 +4,12 @@ import SecondScreen from "./src/screens/SecondScreen"
 import AddImage from "./src/screens/ThirdScreen"
 import ImageScreen from "./src/screens/ImageScreen"
 import FourthScreen from "./src/screens/FourthScreen"
+import InstagramHomeScreen from "./src/screens/InstagramHomeScreen"
 
 const App = () => {
   return (
     <SafeAreaView style = {{flex: 1}}>
-      <FourthScreen></FourthScreen>
+      <InstagramHomeScreen></InstagramHomeScreen>
     </SafeAreaView>
   )
 }
