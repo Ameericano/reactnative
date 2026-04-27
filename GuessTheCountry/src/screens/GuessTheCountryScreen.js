@@ -9,16 +9,26 @@ import {
 const GuessTheCountryScreen = () => {
   const [answer, setAnswer] = useState('');
   const [index, setIndex] = useState(0);
+  const [result, setResult] = useState('');
 
   const randomIndex = () => {
     const pickRandomIndex = Math.floor(Math.random() * countryList.length);
     setIndex(pickRandomIndex);
   };
 
-  useEffect(() => {
-        randomIndex();
-    }, []);
-  
+  const checkAnswer = () => {
+    if (answer.toLowerCase() === countryList[index]) {
+      setResult('true');
+    } else {
+      setResult('false');
+    }
+    setTimeout(() => {
+      setResult('');
+      setAnswer('');
+      randomIndex();
+    }, 1500);
+  };
+
   return (
     <View
       style={{
@@ -69,6 +79,7 @@ const GuessTheCountryScreen = () => {
           placeholder="Write Your Name"
           keyboardType="default"
           onChangeText={text => setAnswer(text)}
+          value={answer}
         />
         <TouchableOpacity
           style={{
@@ -82,11 +93,12 @@ const GuessTheCountryScreen = () => {
             marginTop: 8,
             backgroundColor: 'skyblue',
           }}
+          onPress={() => checkAnswer()}
         >
           <Text style={{ fontSize: 18 }}>Submit</Text>
         </TouchableOpacity>
       </View>
-      <Text>{answer}</Text>
+      <Text>{result}</Text>
     </View>
   );
 };
