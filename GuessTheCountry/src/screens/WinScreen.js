@@ -2,7 +2,10 @@ import React from "react"
 import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native"
 
 
-const WinScreen =  () => {
+
+
+const WinScreen =  (props) => {
+    const { navigation  } = props
     return(
         <View style = {{flex: 1}}>
             <ImageBackground 
@@ -25,7 +28,8 @@ const WinScreen =  () => {
                     padding: 8,
                     borderRadius: 10
                 }}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate("Home")}>
                         <Text style = {{
                             textTransform: "uppercase",
                             fontSize: 24,
