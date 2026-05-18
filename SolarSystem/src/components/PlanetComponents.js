@@ -4,8 +4,8 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 export const PlanetComponents = props => {
   const { image, name, desc, alerttext } = props;
   const openAlert = () => {
-    alert(alerttext)
-  }
+    alert(alerttext);
+  };
   return (
     <View style={{ flex: 1 }}>
       <TouchableOpacity onPress={() => openAlert()}>
